@@ -1,0 +1,16 @@
+<%if user_signed_in?%>
+<div class="float-end">
+<%= link_to "Create new community", new_community_path, class: "btn btn-primary"%>
+</div>
+<%end%>
+<% if @communities.size > 0%>
+
+<%= communities.each do |c|%>
+<div class="card">
+<h1><%= link_to c.name,community_path(@community)%></h1>
+<%= simple_format c.bio%>
+<%end%>
+</div>
+<%else%>
+<p>Nothing here</p>
+<% end %>
