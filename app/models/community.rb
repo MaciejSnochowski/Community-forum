@@ -1,5 +1,5 @@
 class Community < ApplicationRecord
-    ###brak < dziedziczenia
+    validates_presence_of :url, :name, :rules
     belongs_to :user
    
   end

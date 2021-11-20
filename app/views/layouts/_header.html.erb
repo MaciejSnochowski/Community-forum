@@ -4,10 +4,11 @@
         <p class="h3"><%= link_to "My Community", root_path %></p>
       <div class="float-end">
         <% if user_signed_in? %>
+        
         <%= current_user.email %>
            
-      <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      <%= link_to "Settings", edit_user_registration_path, class: "btn btn-outline-primary" %>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
           
         
     

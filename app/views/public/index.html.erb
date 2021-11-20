@@ -20,12 +20,12 @@
     </div>
 
     <div class="row">
-    <div class="col mt-4">
+        <div class="col mt-4">
         <p class="h5">Popular Posts</p>
-    </div>
+        </div>
     </div>
     <div class="row">
-    <div class="col-8">
+        <div class="col-8">
         
     </div>
     <div class="col-4">
@@ -34,14 +34,13 @@
         <div class="card">
 
         <ul class="list-group list-group-flush">
-
-        <li class="list-group-item">asd </li>
-        <li class="list-group-item">asd </li>
-        <li class="list-group-item"> asd</li>
-           
+        <% @communities.each do |community|%>
+        <li class="list-group-item"><%= link_to community.name,  community %> </li>
+       
+        <%end %>
         </ul>
         </div>
-        <%= link_to "View all",communities_path,class: "btn btn-primary"%>
+        <%= link_to "View all",communities_path,class: "btn btn-primary mt-4"%>
     </div>
 </div>
 </div>
