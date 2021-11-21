@@ -1,8 +1,18 @@
 <div class="card mt-4 col-9">
     <div class="container">
+  
+
         <h3><%= @community.name%></h3>
             <br/>
         <%= simple_format @community.url %>
         <%= simple_format @community.rules%>
+       
     </div>
 </div>
+<div class=" mt-3">
+<% @posts.each do |post|%>
+<h2><%= link_to post.title, community_post_path(@community, post)%></h2>
+<p><%= truncate post.body, length: 200 %></p>
+<%end%>
+</div>
+ <%= link_to "Create new post", new_community_post_path(@community),class:"btn btn-primary mt-4 float-start"%>

@@ -1,25 +1,35 @@
-<div class="container">
   <div class="row">
-    <div class="col-12 pt-3 pb-3 border-bottom">
-        <p class="h3"><%= link_to "My Community", root_path %></p>
-      <div class="float-end">
-        <% if user_signed_in? %>
-        
-        <%= current_user.email %>
-           
-      <%= link_to "Settings", edit_user_registration_path, class: "btn btn-outline-primary" %>
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+    <div class="col-12 pt-3 pb-3">
+
+          <div class="float-end">
+             <% if user_signed_in? %>
+              <div class="btn-group" role="group" aria-label="smth">
+                <%= link_to  current_user.full_name  , "profile_path", class: "dropdown-item h5" %>
+                <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item h5" %>
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item h5" %>
+              </div> 
+          </div>
           
+          <% else %>
+          <div class="float-end">
+             
+              <div class="btn-group" role="group" aria-label="smth">
         
-    
-        <% else %>
-        
-          <%= link_to "Log In", new_user_session_path, class: "btn btn-outline-primary" %>
-          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
-        <% end %>
-       
-      </div>
-      
-    </div>
+                <%= link_to "Log In", new_user_session_path, class: "dropdown-item" %>
+                <%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item" %>
+              </div> 
+          </div> 
+          </div> 
+                 
+          
+         
+         
+         
+          
+          <% end %>
+          <p class="h3 "><%= link_to "My Community", root_path %></p>
+         
+         </div> 
+
+    </div> 
   </div>
-</div>

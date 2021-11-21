@@ -1,0 +1,7 @@
+<% @posts.each do |post|%>
+    <div class="card mt-2 p-3">
+    <small><%=link_to post.community.name ,class: "" %> posted by <%= link_to post.user.full_name, profile_path(post.user.username) %>  <%=time_ago_in_words post.created_at%> ago.</small>
+        <h2><%= link_to post.title, community_post_path(post.community_id, post)%></h2>
+        <p><%= truncate post.body, length: 200 %></p>
+    </div>
+<%end%>

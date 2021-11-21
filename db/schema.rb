@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_19_171228) do
+ActiveRecord::Schema.define(version: 2021_11_20_010851) do
 
   create_table "communities", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,20 @@ ActiveRecord::Schema.define(version: 2021_11_19_171228) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_communities_on_user_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "upvotes"
+    t.integer "downvotes"
+    t.integer "total_members"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "community_id"
+    t.integer "user_id"
+    t.index ["community_id"], name: "index_posts_on_community_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
