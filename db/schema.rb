@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_220723) do
+ActiveRecord::Schema.define(version: 2021_11_23_152302) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2021_11_22_220723) do
 
   create_table "communities", force: :cascade do |t|
     t.string "name"
-    t.string "url"
     t.text "rules"
     t.text "total_members"
     t.datetime "created_at", precision: 6, null: false
@@ -37,8 +36,6 @@ ActiveRecord::Schema.define(version: 2021_11_22_220723) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.integer "upvotes"
-    t.integer "downvotes"
     t.integer "total_members"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

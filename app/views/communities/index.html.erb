@@ -11,8 +11,9 @@
         <div class="card p-3">
 
             <h3> <%= link_to community.name,  community %></h3>
-            <%= simple_format community.url %>
-            <%=  simple_format community.rules%>
+            <%= simple_format community.summary%>
+
+           <small> <%=  simple_format community.rules%></small>
 
         </div>
         <br/>
