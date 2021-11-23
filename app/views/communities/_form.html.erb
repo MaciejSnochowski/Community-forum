@@ -11,7 +11,9 @@
 
         <%= label_tag :rules%>
         <%= c.text_area :rules, class:"form-control"%>
-
+        
+         <%= label_tag :summary%>
+        <%= c.text_field :summary, class:"form-control"%>
         </div>
         <%= submit_tag "Submit", class: "btn btn-primary mt-3"%>
         <% end %>

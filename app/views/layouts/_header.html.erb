@@ -4,7 +4,7 @@
           <div class="float-end">
              <% if user_signed_in? %>
               <div class="btn-group" role="group" aria-label="smth">
-                <%= link_to  current_user.full_name  , "profile_path", class: "dropdown-item h5" %>
+                <%= link_to  current_user.full_name  , profile_path(current_user.username), class: "dropdown-item h5" %>
                 <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item h5" %>
                 <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item h5" %>
               </div> 

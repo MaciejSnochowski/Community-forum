@@ -1,24 +1,25 @@
 <%if user_signed_in?%>
+
 <div class="float-end mt-4">
-<%= link_to "Create new community", new_community_path, class: "btn btn-primary"%>
+    <%= link_to "Create new community", new_community_path, class: "btn btn-primary"%>
 </div>
 <%end%>
-<div class="mt-4 col-9">
-<% if @communities.size > 0%>
+    <div class="mt-4 col-9">
+        <% if @communities.size > 0%>
 
-<% @communities.each do |community|%>
-<div class="card">
+        <% @communities.each do |community|%>
+        <div class="card p-3">
 
-    <h3> <%= link_to community.name,  community %></h3>
-    <%= simple_format community.url %>
-    <%=  simple_format community.rules%>
+            <h3> <%= link_to community.name,  community %></h3>
+            <%= simple_format community.url %>
+            <%=  simple_format community.rules%>
 
-</div>
-<br/>
+        </div>
+        <br/>
 
-<%end%>
+        <%end%>
 
-<%else%>
-<p>Nothing here</p>
-<% end %>
-</div>
+        <%else%>
+        <p>Nothing here</p>
+        <% end %>
+    </div>
